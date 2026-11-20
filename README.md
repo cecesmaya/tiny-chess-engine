@@ -12,10 +12,12 @@ transposition table, quiescence search, killer and history move ordering,
 null-move pruning and late-move reductions, searching to a fixed node
 budget — never a clock, so a replayed trial plays the same moves.
 Evaluation is material plus generated piece-square tables with a tapered
-king term and the bishop pair, maintained incrementally on make/unmake.
+king term. Repetition is scored as a draw, including against positions
+from earlier in the same game.
 
-Practice trials (local env server, 80,000 nodes/move): trial-0 Elo 1809
-(5 wins, 1 draw), trial-1 and trial-2 to be added. The floor to enter the
+Practice trials (local env server, 80,000 nodes/move): trial-0 Elo 1654
+(5 wins, 1 loss), trial-1 Elo 1364 (3 wins, 1 draw, 2 losses), trial-2
+Elo 1545 (3 wins, 3 draws, unbeaten) — mean 1521. The floor to enter the
 final is 1154; the house baseline (sunfish 4K) rates about 1365 on the
 same practice trials.
 
